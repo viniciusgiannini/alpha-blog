@@ -1,13 +1,14 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .navbar {
-    background-color: #181818 !important;
+    background-color: #4e4e4e !important;
     margin: 0%;
     }
     
     .navbar-brand {
     font-size: 3rem;
     color: rgb(255, 255, 255) !important;
+    
     }
     
     h1 {
@@ -44,7 +45,7 @@ body{
     height: 100%;
 }
 
-#page-contente{
+#page-content{
     flex: 1 0 auto;
     background-color:lightgray;
 }

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.includes(:user).paginate(page: params[:page], per_page: 50)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = self.current_user
     if @article.save
       flash[:notice] = "Article was created successfully."
       redirect_to @article
